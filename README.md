@@ -195,7 +195,7 @@ aws iam attach-role-policy --policy-arn arn:aws:iam::574344495913:policy/lambda-
 --zip-file fileb://~/Documents/lambda-function-code.zip
 ```
 
-#### d.1 Schedule the job to run every minute. Stop execution after 3 runs
+#### d. Schedule the job to run every minute. Stop execution after 3 runs
 i. Create a rule in cloud watch events with cron expression "* * * * ? *" to trigger above created lambda function. Then enable the rule.
 
 ii. After 3 executions disable the rule.
@@ -269,7 +269,7 @@ def lambda_handler(event, context):
 
 <img width="1189" alt="Screenshot 2023-05-14 at 8 10 03 PM" src="https://github.com/Sonali-Gudey/AWS-assignment/assets/123619701/fb4cf169-9e7a-494c-af9a-346cb751f97b">
 
-#### d.2 Check if cloud watch logs are generated.
+#### e. Check if cloud watch logs are generated.
 
 <img width="1189" alt="Screenshot 2023-05-14 at 8 10 52 PM" src="https://github.com/Sonali-Gudey/AWS-assignment/assets/123619701/8c6a8719-ae4c-4a96-a280-4f5d391ddb5d">
 
