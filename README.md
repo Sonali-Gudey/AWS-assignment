@@ -112,7 +112,7 @@ Contents of lambda-s3-put-policy.json file:
             "Action": [
                 "s3:PutObject"
             ],
-            "Resource": "arn:aws:s3:::your-bucket-name/*"
+            "Resource": "arn:aws:s3:::sonali-s3-q1/*"
         }
     ]
 }
