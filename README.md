@@ -336,6 +336,15 @@ i. Open postman appication and select post method then paste the url with endpoi
 
 ii In the body select raw and json type. Give the body there then hit the api.
 
+![image](https://github.com/Sonali-Gudey/AWS-assignment/assets/123619701/4e4fc9a0-e987-4c7d-9b8f-7038f524da8e)
+
+
+#### d. Check if Cloudwatch logs are generated
+i. Check cloud watch logs in cloudwatch.
+
+![image](https://github.com/Sonali-Gudey/AWS-assignment/assets/123619701/59332b82-0ce2-4504-a87f-b1a914f31b3e)
+
+
 
 
 
