@@ -37,8 +37,8 @@ def lambda_handler(event, context):
         log_group = 'sonali_logs'
         log_stream = 'sonali_stream_data'
         log_message = f"Object created in S3 bucket {bucket_name}"
-        logs_client.create_log_group(logGroupName=group_name)
-        logs_client.create_log_stream(logGroupName=group_name, logStreamName=stream_name)
+        logs_client.create_log_group(logGroupName=log_group)
+        logs_client.create_log_stream(logGroupName=log_group, logStreamName=log_stream)
         logs_client.put_log_events(
             logGroupName=log_group,
             logStreamName=log_stream,
