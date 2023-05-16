@@ -10,8 +10,11 @@ key_name = 'transaction{}.json'
 
 logs_client = boto3.client('logs')
 
+count = 0
 
 def lambda_handler(event, context):
+    global count
+    count += 1
     try:
         # Generate JSON in the given format
         transaction_id = 12345
@@ -49,11 +52,11 @@ def lambda_handler(event, context):
         )
         
         # Stop execution after 3 runs
-        if context.invoked_function_arn.endswith(':1'):
+        if count == 1:
             print('First execution')
-        elif context.invoked_function_arn.endswith(':2'):
+        elif count == 2:
             print('Second execution')
-        elif context.invoked_function_arn.endswith(':3'):
+        elif count == 3:
             print('Third execution')
         else:
             print('Stopping execution')
