@@ -213,8 +213,11 @@ key_name = 'transaction{}.json'
 
 logs_client = boto3.client('logs')
 
+count = 0
 
 def lambda_handler(event, context):
+    global count
+    count += 1
     try:
         # Generate JSON in the given format
         transaction_id = 12345
@@ -240,8 +243,8 @@ def lambda_handler(event, context):
         log_group = 'sonali_logs'
         log_stream = 'sonali_stream_data'
         log_message = f"Object created in S3 bucket {bucket_name}"
-        logs_client.create_log_group(logGroupName=group_name)
-        logs_client.create_log_stream(logGroupName=group_name, logStreamName=stream_name)
+        logs_client.create_log_group(logGroupName=log_group)
+        logs_client.create_log_stream(logGroupName=log_group, logStreamName=log_stream)
         logs_client.put_log_events(
             logGroupName=log_group,
             logStreamName=log_stream,
@@ -252,11 +255,11 @@ def lambda_handler(event, context):
         )
         
         # Stop execution after 3 runs
-        if context.invoked_function_arn.endswith(':1'):
+        if count == 1:
             print('First execution')
-        elif context.invoked_function_arn.endswith(':2'):
+        elif count == 2:
             print('Second execution')
-        elif context.invoked_function_arn.endswith(':3'):
+        elif count == 3:
             print('Third execution')
         else:
             print('Stopping execution')
